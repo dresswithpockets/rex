@@ -12,7 +12,7 @@ DEPS := $(filter %.d,$(SRCS:.cpp=.d))
 # for identifying architecture and OS when compiling
 # see https://stackoverflow.com/a/12099167/3007166 for original post
 ifeq ($(OS),Windows_NT)
-    CCFLAGS += -D WIN32
+    CCFLAGS += -D WIN32 -D RX_PLATFORM_WINDOWS
     ifeq ($(PROCESSOR_ARCHITEW6432),AMD64)
         CCFLAGS += -D AMD64
     else
