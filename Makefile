@@ -46,7 +46,7 @@ endif
 # agnostic compilation flags
 CXXFLAGS := -std=c++17
 CXXFLAGS += -Iinc
-CXXFLAGS += $(shell sdl2-config --cflags)
+CXXFLAGS += `sdl2-config --cflags`
 
 ifeq ($(LTO),1)
 	CXXFLAGS += -flto
@@ -75,7 +75,7 @@ endif
 
 # linker flags
 LDFLAGS := -lpthread
-LDFLAGS += $(shell sdl2-config --libs)
+LDFLAGS += `sdl2-config --libs`
 ifeq ($(LTO),1)
 	LDFLAGS += -flto
 endif
